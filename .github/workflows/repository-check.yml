@@ -1,0 +1,61 @@
+name: Repository Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  repository-check:
+    name: Repository Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required project files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_paths=(
+            "README.md"
+            "docs/requirements.md"
+            "docs/architecture-notes.md"
+            "src/models.ts"
+          )
+
+          for path in "${required_paths[@]}"; do
+            if [[ ! -s "$path" ]]; then
+              echo "::error file=$path::Required file is missing or empty."
+              exit 1
+            fi
+          done
+
+      - name: Validate Markdown headings
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r file; do
+            if ! grep -qE '^# ' "$file"; then
+              echo "::error file=$file::Markdown file must include a top-level heading."
+              exit 1
+            fi
+          done < <(find . -path ./.git -prune -o -name '*.md' -type f -print)
+
+      - name: Validate TypeScript model file
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! grep -q "export type" src/models.ts; then
+            echo "::error file=src/models.ts::Model file should export TypeScript types."
+            exit 1
+          fi
+

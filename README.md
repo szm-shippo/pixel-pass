@@ -33,6 +33,11 @@
 - 出会い系の体験設計に寄せない
 - SNSより軽く、日記と収集に近い体験にする
 
+## Tech Stack
+
+- Rust
+- Tauri v2
+
 ## Repository Layout
 
 ```text
