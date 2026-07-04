@@ -44,7 +44,7 @@
 .
 ├── docs/
 │   ├── requirements.md
-│   └── architecture-notes.md
+│   └── architecture.md
 ├── src/
 │   └── models.ts
 ├── .gitignore

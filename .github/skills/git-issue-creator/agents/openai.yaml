@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Issue Creator"
+  short_description: "Draft and create structured GitHub issues"
+  default_prompt: "Use $git-issue-creator to create a clear GitHub issue from a short bug or feature request."
