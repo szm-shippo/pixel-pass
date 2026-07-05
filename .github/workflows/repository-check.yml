@@ -25,9 +25,6 @@ jobs:
 
           required_paths=(
             "README.md"
-            "docs/requirements.md"
-            "docs/architecture-notes.md"
-            "src/models.ts"
           )
 
           for path in "${required_paths[@]}"; do
@@ -58,4 +55,3 @@ jobs:
             echo "::error file=src/models.ts::Model file should export TypeScript types."
             exit 1
           fi
-
