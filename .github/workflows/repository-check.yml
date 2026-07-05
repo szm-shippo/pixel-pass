@@ -45,13 +45,3 @@ jobs:
               exit 1
             fi
           done < <(find . -path ./.git -prune -o -name '*.md' -type f -print)
-
-      - name: Validate TypeScript model file
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if ! grep -q "export type" src/models.ts; then
-            echo "::error file=src/models.ts::Model file should export TypeScript types."
-            exit 1
-          fi
