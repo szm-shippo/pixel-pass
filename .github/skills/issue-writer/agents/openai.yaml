@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Writer"
+  short_description: "Draft issues with a consistent Markdown structure"
+  default_prompt: "Use $issue-writer to draft a GitHub issue with purpose, scope, completion criteria, and test method."

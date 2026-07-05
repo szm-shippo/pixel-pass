@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Writer"
+  short_description: "Draft Git Conventional Commit messages from diffs"
+  default_prompt: "Use $commit-writer to draft a Conventional Commit message from the current diff or change summary."
