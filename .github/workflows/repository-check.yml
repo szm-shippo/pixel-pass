@@ -44,4 +44,4 @@ jobs:
               echo "::error file=$file::Markdown file must include a top-level heading."
               exit 1
             fi
-          done < <(find . -path ./.git -prune -o -name '*.md' -type f -print)
+          done < <(find . -path ./.git -prune -o -path ./.github/prompts -prune -o -name '*.md' -type f -print)
