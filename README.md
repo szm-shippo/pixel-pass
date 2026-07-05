@@ -1,37 +1,37 @@
 # pixel-pass
 
-スマホ同士の近距離通信で、ドット絵風のメンバーズカードを交換するアプリの開発リポジトリです。
+This repository contains the development source for an app that exchanges pixel-art membership cards over short-range phone communication.
 
-このプロジェクトの中心は、通信機能そのものではなく、ユーザーが自分のカードにその日の小さな記録を載せ、近くにいる相手と交換し、あとで思い出として見返せる体験です。
+The core of the project is not the transport itself. It is the experience of adding a small daily record to your card, exchanging it with someone nearby, and revisiting it later as a memory.
 
 ## MVP Scope
 
-- iPhone向けMVPを先行する
-- カード作成
-- 今日のピクセルスタンプ日記
-- QR / NFC を中心にした明示的な交換
-- カード帳
-- カレンダービュー
-- 署名付きデータモデル
-- オフライン前提のローカル保存
+- Prioritize an iPhone-first MVP
+- Card creation
+- Today’s pixel stamp journal
+- Explicit exchange centered on QR / NFC
+- Card collection
+- Calendar view
+- Signed data model
+- Local storage with an offline-first assumption
 
 ## Out of Scope for MVP
 
-- 常時BLEすれ違い交換
-- Android対応
-- 詳細なマップビュー
-- イベント主催者向け機能
-- バックアップ / 同期
-- サブスクリプション課金
+- Continuous BLE pass-by exchange
+- Android support
+- Detailed map view
+- Event organizer features
+- Backup / sync
+- Subscription billing
 
 ## Product Principles
 
-- 匿名寄りで安全な交換体験にする
-- 固定IDをブロードキャストしない
-- 位置情報はオプトインかつぼかして扱う
-- 交換機能と受け取ったカード閲覧は無料の中核機能にする
-- 出会い系の体験設計に寄せない
-- SNSより軽く、日記と収集に近い体験にする
+- Keep the exchange experience anonymous and safe
+- Do not broadcast fixed IDs
+- Handle location as opt-in and fuzzed data
+- Make exchange and received-card viewing the free core features
+- Avoid designing it like a dating app
+- Keep it lighter than social media, closer to journaling and collecting
 
 ## Tech Stack
 
@@ -48,9 +48,10 @@
 ├── src/
 │   └── models.ts
 ├── .gitignore
+├── README.js.md
 └── README.md
 ```
 
 ## Source Requirement
 
-元の要件整理は `docs/requirements.md` に保存しています。実装判断に迷った場合は、このREADMEより要件書を優先します。
+The original requirements are stored in `docs/requirements.md`. If implementation decisions are unclear, prefer the requirements document over this README.
